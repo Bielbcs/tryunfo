@@ -1,0 +1,22 @@
+.form-container {
+  align-items: center;
+  border: 2px solid chartreuse;
+  border-radius: 5px;
+  box-shadow: 3px 2px darkgreen;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: center;
+  width: 500px;
+}
+
+.form-container input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
