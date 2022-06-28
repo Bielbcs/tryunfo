@@ -10,9 +10,9 @@
   width: 500px;
 }
 
-.form-container input {
-  border: none;
-  border-bottom: 1px solid black;
+.form-container input, .form-container textarea {
+  border: 2px solid chartreuse;
+  border-radius: 8px;
 }
 
 .form {
