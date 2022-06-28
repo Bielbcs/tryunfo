@@ -11,13 +11,26 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardTrunfo: false,
       cardRare: '',
     };
+  }
+
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardRare: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+    });
   }
 
   isSaveButtonDisabled = () => {
@@ -58,7 +71,7 @@ class App extends React.Component {
           cardAttr2={ cardAttr2 }
           cardAttr3={ cardAttr3 }
           isSaveButtonDisabled={ this.isSaveButtonDisabled() }
-          // onSaveButtonClick={ onSaveButtonClick }
+          onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
           onInputChange={ (event) => this.onInputChange(event) }
         />
         <Card
