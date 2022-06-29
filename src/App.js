@@ -14,7 +14,7 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardImage: '',
+      cardImage: 'https://besthqwallpapers.com/Uploads/5-4-2019/86291/thumb2-blue-abstract-background-neon-blue-background-abstraction-creative-blue-backgrounds.jpg',
       cardTrunfo: false,
       cardRare: '',
       cardList: [],
@@ -25,11 +25,12 @@ class App extends React.Component {
     this.setState({
       cardName: '',
       cardDescription: '',
-      cardImage: '',
+      cardImage: 'https://besthqwallpapers.com/Uploads/5-4-2019/86291/thumb2-blue-abstract-background-neon-blue-background-abstraction-creative-blue-backgrounds.jpg',
       cardRare: '',
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
+      cardTrunfo: false,
     });
   }
 
@@ -87,7 +88,14 @@ class App extends React.Component {
   onInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.type === 'checkbox'
       ? event.target.checked : event.target.value });
-  }
+  };
+
+  deleteButton = (event) => {
+    const { cardList } = this.state;
+    const cardName = event.target.parentNode.firstChild.textContent;
+    const newArray = cardList.filter((item) => item.cardName !== cardName);
+    this.setState({ cardList: newArray });
+  };
 
   render() {
     const { cardName, cardImage, cardTrunfo, cardRare, cardDescription, cardAttr1,
@@ -95,43 +103,50 @@ class App extends React.Component {
     return (
       <div className="general-container">
         <div className="cardForm-container">
-          <Form
-            className="teste"
-            cardName={ cardName }
-            cardImage={ cardImage }
-            cardTrunfo={ cardTrunfo }
-            cardRare={ cardRare }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            verifyTrunfo={ this.verifyTrunfo() }
-            isSaveButtonDisabled={ this.isSaveButtonDisabled() }
-            onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
-            onInputChange={ (event) => this.onInputChange(event) }
-          />
-          <Card
-            cardName={ cardName }
-            cardImage={ cardImage }
-            cardTrunfo={ cardTrunfo }
-            cardRare={ cardRare }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-          />
+          <div className="form">
+            <Form
+              className="teste"
+              cardName={ cardName }
+              cardImage={ cardImage }
+              cardTrunfo={ cardTrunfo }
+              cardRare={ cardRare }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              verifyTrunfo={ this.verifyTrunfo() }
+              isSaveButtonDisabled={ this.isSaveButtonDisabled() }
+              onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
+              onInputChange={ (event) => this.onInputChange(event) }
+            />
+          </div>
+          <div className="card-preview">
+            <Card
+              cardName={ cardName }
+              cardImage={ cardImage }
+              cardTrunfo={ cardTrunfo }
+              cardRare={ cardRare }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+            />
+          </div>
         </div>
-        {cardList.map((item) => (<Card
-          key={ item.cardName }
-          cardName={ item.cardName }
-          cardImage={ item.cardImage }
-          cardTrunfo={ item.cardTrunfo }
-          cardRare={ item.cardRare }
-          cardDescription={ item.cardDescription }
-          cardAttr1={ item.cardAttr1 }
-          cardAttr2={ item.cardAttr2 }
-          cardAttr3={ item.cardAttr3 }
-        />))}
+        <div className="card-list">
+          {cardList.map((item) => (<Card
+            key={ item.cardName }
+            cardName={ item.cardName }
+            cardImage={ item.cardImage }
+            cardTrunfo={ item.cardTrunfo }
+            cardRare={ item.cardRare }
+            cardDescription={ item.cardDescription }
+            cardAttr1={ item.cardAttr1 }
+            cardAttr2={ item.cardAttr2 }
+            cardAttr3={ item.cardAttr3 }
+            deleteButton={ (event) => this.deleteButton(event) }
+          />))}
+        </div>
       </div>
     );
   }

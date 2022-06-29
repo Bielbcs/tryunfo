@@ -2,19 +2,17 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .card {
   align-items: center;
-  background-image: url('https://s2.glbimg.com/LN8G4ybnUz1RKcoLc-B7jiFgJN8=/800x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2014/09/11/a3007004012d036412313b075c91.jpeg');
-  background-size: cover;
+  background-color: wheat;
   border: 1px solid green;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  height: 450px;
-  width: 40%;
+  height: 500px;
+  width: 300px;
 }
 
 .card-information {

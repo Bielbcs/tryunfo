@@ -1,8 +1,26 @@
 .cardForm-container {
-  align-items: center;
-  background-image: url('https://imagensemoldes.com.br/wp-content/uploads/2018/05/Sonic-Plano-de-Fundo-Background-2-PNG.png');
+  background-image: url('https://besthqwallpapers.com/Uploads/5-4-2019/86291/thumb2-blue-abstract-background-neon-blue-background-abstraction-creative-blue-backgrounds.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  height: 100vh;
+  height: 95vh;
+}
+
+.card-preview {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 80%;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
 }
