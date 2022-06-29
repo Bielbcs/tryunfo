@@ -1,3 +1,8 @@
-.general-container {
+.cardForm-container {
+  align-items: center;
+  background-image: url('https://imagensemoldes.com.br/wp-content/uploads/2018/05/Sonic-Plano-de-Fundo-Background-2-PNG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  height: 100vh;
 }

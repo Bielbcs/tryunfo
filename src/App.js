@@ -91,34 +91,47 @@ class App extends React.Component {
 
   render() {
     const { cardName, cardImage, cardTrunfo, cardRare, cardDescription, cardAttr1,
-      cardAttr2, cardAttr3 } = this.state;
+      cardAttr2, cardAttr3, cardList } = this.state;
     return (
       <div className="general-container">
-        <Form
-          className="teste"
-          cardName={ cardName }
-          cardImage={ cardImage }
-          cardTrunfo={ cardTrunfo }
-          cardRare={ cardRare }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          verifyTrunfo={ this.verifyTrunfo() }
-          isSaveButtonDisabled={ this.isSaveButtonDisabled() }
-          onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
-          onInputChange={ (event) => this.onInputChange(event) }
-        />
-        <Card
-          cardName={ cardName }
-          cardImage={ cardImage }
-          cardTrunfo={ cardTrunfo }
-          cardRare={ cardRare }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-        />
+        <div className="cardForm-container">
+          <Form
+            className="teste"
+            cardName={ cardName }
+            cardImage={ cardImage }
+            cardTrunfo={ cardTrunfo }
+            cardRare={ cardRare }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            verifyTrunfo={ this.verifyTrunfo() }
+            isSaveButtonDisabled={ this.isSaveButtonDisabled() }
+            onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
+            onInputChange={ (event) => this.onInputChange(event) }
+          />
+          <Card
+            cardName={ cardName }
+            cardImage={ cardImage }
+            cardTrunfo={ cardTrunfo }
+            cardRare={ cardRare }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+          />
+        </div>
+        {cardList.map((item) => (<Card
+          key={ item.cardName }
+          cardName={ item.cardName }
+          cardImage={ item.cardImage }
+          cardTrunfo={ item.cardTrunfo }
+          cardRare={ item.cardRare }
+          cardDescription={ item.cardDescription }
+          cardAttr1={ item.cardAttr1 }
+          cardAttr2={ item.cardAttr2 }
+          cardAttr3={ item.cardAttr3 }
+        />))}
       </div>
     );
   }

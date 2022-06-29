@@ -7,6 +7,8 @@
 
 .card {
   align-items: center;
+  background-image: url('https://s2.glbimg.com/LN8G4ybnUz1RKcoLc-B7jiFgJN8=/800x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2014/09/11/a3007004012d036412313b075c91.jpeg');
+  background-size: cover;
   border: 1px solid green;
   border-radius: 12px;
   display: flex;

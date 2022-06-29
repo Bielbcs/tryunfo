@@ -1,8 +1,10 @@
 .form-container {
   align-items: center;
-  border: 2px solid chartreuse;
+  background-image: url('https://i.pinimg.com/736x/ba/86/75/ba86754361835c590bb7ac389406607e.jpg');
+  border: 2px solid blue;
   border-radius: 5px;
-  box-shadow: 3px 2px darkgreen;
+  box-shadow: 3px 2px darkblue;
+  color: white;
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -11,7 +13,8 @@
 }
 
 .form-container input, .form-container textarea {
-  border: 2px solid chartreuse;
+  background-color: aqua;
+  border: 2px solid blue;
   border-radius: 8px;
 }
 
