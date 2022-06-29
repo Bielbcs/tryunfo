@@ -17,11 +17,11 @@ class App extends React.Component {
       cardImage: '',
       cardTrunfo: false,
       cardRare: '',
+      cardList: [],
     };
   }
 
-  onSaveButtonClick = (event) => {
-    event.preventDefault();
+  resetState = () => {
     this.setState({
       cardName: '',
       cardDescription: '',
@@ -31,6 +31,40 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
     });
+  }
+
+  catchCard = () => {
+    const { cardName, cardDescription, cardImage, cardRare,
+      cardAttr1, cardAttr2, cardAttr3, cardTrunfo } = this.state;
+
+    const card = {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+    };
+    const { cardList } = this.state;
+    const newCardList = [...cardList, card];
+    this.setState({ cardList: newCardList });
+  };
+
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    this.catchCard();
+    this.resetState();
+  }
+
+  verifyTrunfo = () => {
+    const { cardList } = this.state;
+    const newArray = [];
+    cardList.forEach((item) => {
+      newArray.push(item.cardTrunfo);
+    });
+    if (newArray.some((item2) => item2)) return true;
   }
 
   isSaveButtonDisabled = () => {
@@ -70,6 +104,7 @@ class App extends React.Component {
           cardAttr1={ cardAttr1 }
           cardAttr2={ cardAttr2 }
           cardAttr3={ cardAttr3 }
+          verifyTrunfo={ this.verifyTrunfo() }
           isSaveButtonDisabled={ this.isSaveButtonDisabled() }
           onSaveButtonClick={ (event) => this.onSaveButtonClick(event) }
           onInputChange={ (event) => this.onInputChange(event) }
