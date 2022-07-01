@@ -40,19 +40,19 @@ class Card extends React.Component {
             data-testid="attr1-card"
             className="atributes"
           >
-            {`Namoradas: ${cardAttr1}` }
+            {`Força: ${cardAttr1}` }
           </span>
           <span
             data-testid="attr2-card"
             className="atributes"
           >
-            {`Masculinidade: ${cardAttr2}` }
+            {`Velocidade: ${cardAttr2}` }
           </span>
           <span
             data-testid="attr3-card"
             className="atributes"
           >
-            {`DST's contraídas: ${cardAttr3}` }
+            {`Inteligência: ${cardAttr3}` }
           </span>
           <div className="rare-card">
             <span data-testid="rare-card">{ cardRare }</span>
