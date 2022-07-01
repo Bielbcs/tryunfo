@@ -1,25 +1,64 @@
 .form-container {
   align-items: center;
-  background-image: url('https://i.pinimg.com/736x/ba/86/75/ba86754361835c590bb7ac389406607e.jpg');
-  border: 2px solid blue;
+  background-color: rgb(68, 68, 68);
+  border: 2px solid chartreuse;
   border-radius: 5px;
-  box-shadow: 3px 2px darkblue;
+  box-shadow: 3px 2px rgb(79, 158, 0);
   color: white;
   display: flex;
   flex-direction: column;
   height: 500px;
   justify-content: center;
+  text-align: center;
   width: 500px;
 }
 
 .form-container input, .form-container textarea {
-  background-color: aqua;
-  border: 2px solid blue;
-  border-radius: 8px;
+  background-color: #222;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  height: 40px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .form {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.save-button {
+  background-color: chartreuse;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px black;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+  padding: 5px 20px;
+}
+
+.rare-input {
+  background-color: chartreuse;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px black;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+  padding: 5px 20px;
+}
+
+.checkbox {
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.checkbox input {
+  cursor: pointer;
+  width: 20px;
 }

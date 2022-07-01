@@ -14,7 +14,7 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardImage: 'https://besthqwallpapers.com/Uploads/5-4-2019/86291/thumb2-blue-abstract-background-neon-blue-background-abstraction-creative-blue-backgrounds.jpg',
+      cardImage: '',
       cardTrunfo: false,
       cardRare: '',
       cardList: [],
@@ -25,7 +25,7 @@ class App extends React.Component {
     this.setState({
       cardName: '',
       cardDescription: '',
-      cardImage: 'https://besthqwallpapers.com/Uploads/5-4-2019/86291/thumb2-blue-abstract-background-neon-blue-background-abstraction-creative-blue-backgrounds.jpg',
+      cardImage: '',
       cardRare: '',
       cardAttr1: '0',
       cardAttr2: '0',
@@ -92,7 +92,7 @@ class App extends React.Component {
 
   deleteButton = (event) => {
     const { cardList } = this.state;
-    const cardName = event.target.parentNode.firstChild.textContent;
+    const cardName = event.target.parentNode.firstChild.firstChild.textContent;
     const newArray = cardList.filter((item) => item.cardName !== cardName);
     this.setState({ cardList: newArray });
   };

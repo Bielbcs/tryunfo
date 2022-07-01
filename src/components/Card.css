@@ -1,27 +1,141 @@
 .card-container {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  row-gap: 20px;
 }
 
-.card {
+.card, .raroCard, .muitoRaro, .trunfo {
   align-items: center;
-  background-color: wheat;
-  border: 1px solid green;
+  background-color: rgb(68, 68, 68);
+  border: 3px solid chartreuse;
   border-radius: 12px;
+  box-shadow: 2px 3px rgb(74, 148, 0);
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 560px;
   width: 300px;
 }
 
 .card-information {
-  border: 1px solid yellow;
   height: 200px;
-  width: 90%;
+  width: 95%;
 }
 
 .card-information img {
+  border-radius: 5px;
   height: 100%;
+  object-fit: cover;
   width: 100%;
+}
+
+.trunfo-card {
+  align-items: center;
+  background-color: greenyellow;
+  border: 2px solid yellow;
+  border-radius: 100%;
+  bottom: 100px;
+  box-shadow: 2px 2px green;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: 75px;
+  justify-content: center;
+  left: 20px;
+  position: relative;
+  text-align: center;
+  transform: rotate(340deg);
+  width: 75px;
+}
+
+.cardName {
+  align-items: center;
+  background-color: chartreuse;
+  border-radius: 7px;
+  box-shadow: 2px 2px black;
+  color: #222;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  overflow: auto;
+  text-align: center;
+  width: 90%;
+}
+
+.description {
+  background-color: #222;
+  color: white;
+  font-size: smaller;
+  height: 70px;
+  margin-bottom: 5px;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.atributes {
+  align-items: center;
+  background-color: chartreuse;
+  border-radius: 7px;
+  box-shadow: 2px 2px black;
+  color: #222;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+  width: 90%;
+}
+
+.delete-button {
+  background-color: chartreuse;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px black;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+  padding: 5px 20px;
+}
+
+.card .rare-card, .raroCard .rare-card, .muitoRaro .rare-card, .trunfo .rare-card {
+  align-items: center;
+  background-color: chartreuse;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 900;
+  height: 40px;
+  justify-content: center;
+  position: relative;
+  top: 23px;
+  width: 100%;
+}
+
+.raroCard {
+  border: 3px solid purple;
+  box-shadow: 2px 3px rgb(81, 0, 81);
+}
+
+.raroCard .rare-card, .raroCard .atributes, .raroCard .cardName {
+  background-color: purple;
+}
+
+.muitoRaro {
+  border: 3px solid red;
+  box-shadow: 2px 3px darkred;
+}
+
+.muitoRaro .rare-card, .muitoRaro .atributes, .muitoRaro .cardName {
+  background-color: red;
+  color: whitesmoke;
+}
+
+.trunfo {
+  border: 3px solid orange;
+  box-shadow: 2px 3px darkorange;
+}
+
+.trunfo .rare-card, .trunfo .atributes, .trunfo .cardName {
+  background-color: orange;
 }
