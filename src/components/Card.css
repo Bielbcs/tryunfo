@@ -115,10 +115,12 @@
 .raroCard {
   border: 3px solid purple;
   box-shadow: 2px 3px rgb(81, 0, 81);
+  color: white;
 }
 
 .raroCard .rare-card, .raroCard .atributes, .raroCard .cardName {
   background-color: purple;
+  color: white;
 }
 
 .muitoRaro {

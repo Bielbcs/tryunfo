@@ -40,22 +40,22 @@ class Card extends React.Component {
             data-testid="attr1-card"
             className="atributes"
           >
-            {`Força: ${cardAttr1}` }
+            {cardAttr1 === '0' ? '' : `Força: ${cardAttr1}`}
           </span>
           <span
             data-testid="attr2-card"
             className="atributes"
           >
-            {`Velocidade: ${cardAttr2}` }
+            {cardAttr2 === '0' ? '' : `Velocidade: ${cardAttr2}`}
           </span>
           <span
             data-testid="attr3-card"
             className="atributes"
           >
-            {`Inteligência: ${cardAttr3}` }
+            {cardAttr3 === '0' ? '' : `Inteligência: ${cardAttr3}` }
           </span>
           <div className="rare-card">
-            <span data-testid="rare-card">{ cardRare }</span>
+            <span data-testid="rare-card">{ cardRare.toUpperCase() }</span>
           </div>
         </div>
         { deleteButton && (

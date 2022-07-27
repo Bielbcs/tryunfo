@@ -31,7 +31,7 @@ class Form extends React.Component {
     return (
       <div className="form">
         <form action="" className="form-container" autoComplete="off">
-
+          <p>Personalização</p>
           <label htmlFor="cardName">
             <input
               placeholder="Nome"
@@ -41,9 +41,10 @@ class Form extends React.Component {
               value={ cardName }
               onChange={ onInputChange }
             />
+            <span>*</span>
           </label>
 
-          <label htmlFor="cardDescription">
+          <label htmlFor="cardDescription" className="centralized">
             <textarea
               name="cardDescription"
               placeholder="Descrição"
@@ -51,39 +52,7 @@ class Form extends React.Component {
               value={ cardDescription }
               onChange={ onInputChange }
             />
-          </label>
-
-          <label htmlFor="cardAttr1">
-            <input
-              type="number"
-              placeholder="Força"
-              name="cardAttr1"
-              data-testid="attr1-input"
-              value={ cardAttr1 }
-              onChange={ onInputChange }
-            />
-          </label>
-
-          <label htmlFor="cardAttr2">
-            <input
-              type="number"
-              placeholder="Velocidade"
-              name="cardAttr2"
-              data-testid="attr2-input"
-              value={ cardAttr2 }
-              onChange={ onInputChange }
-            />
-          </label>
-
-          <label htmlFor="cardAttr3">
-            <input
-              type="number"
-              placeholder="Inteligência"
-              name="cardAttr3"
-              data-testid="attr3-input"
-              value={ cardAttr3 }
-              onChange={ onInputChange }
-            />
+            <span>*</span>
           </label>
 
           <label htmlFor="cardImage">
@@ -95,9 +64,44 @@ class Form extends React.Component {
               value={ cardImage }
               onChange={ onInputChange }
             />
+            <span>*</span>
           </label>
 
-          <label htmlFor="cardRare">
+          <p>Atributos</p>
+          <label htmlFor="cardAttr1" className="atributes-container">
+            <input
+              type="number"
+              placeholder="Força"
+              name="cardAttr1"
+              data-testid="attr1-input"
+              value={ cardAttr1 === '0' ? '' : cardAttr1 }
+              onChange={ onInputChange }
+            />
+          </label>
+
+          <label htmlFor="cardAttr2" className="atributes-container">
+            <input
+              type="number"
+              placeholder="Velocidade"
+              name="cardAttr2"
+              data-testid="attr2-input"
+              value={ cardAttr2 === '0' ? '' : cardAttr2 }
+              onChange={ onInputChange }
+            />
+          </label>
+
+          <label htmlFor="cardAttr3" className="atributes-container">
+            <input
+              type="number"
+              placeholder="Inteligência"
+              name="cardAttr3"
+              data-testid="attr3-input"
+              value={ cardAttr3 === '0' ? '' : cardAttr3 }
+              onChange={ onInputChange }
+            />
+          </label>
+
+          <label htmlFor="cardRare" className="centralized">
             <span>Raridade:</span>
             <br />
             <select
@@ -111,6 +115,8 @@ class Form extends React.Component {
               <option>raro</option>
               <option>muito raro</option>
             </select>
+            <span>*</span>
+
           </label>
 
           { this.hasTrunfo() }
